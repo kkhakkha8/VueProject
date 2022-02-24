@@ -1,0 +1,17 @@
+[
+    {
+    "hak":"Hla Aung Khan",
+    "age":20,
+    "isMale":true
+    },
+    {
+        "kk":"Kyaw Kyaw",
+        "age":22,
+        "isMale":true
+    },
+    {
+        "aa":"Aung Aung",
+        "age":23,
+        "isMale":true
+    }
+]
