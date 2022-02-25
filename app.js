@@ -2,9 +2,14 @@ const app = Vue.createApp({
     //template:"<h2>Hi There</h2>"
     data(){
         return {
-            title:"book",
+            title:"You don't know JS",
             age:33,
             author:"Hla Aung Khan"
+        }
+    },
+    methods:{
+        changeName(){
+            this.author = random([A-z]);
         }
     }
 });
