@@ -9,8 +9,14 @@ const app = Vue.createApp({
         }
     },
     methods:{
-        changeName(){
-            this.author = random([A-z]);
+        mouseoverHandler(event,data){
+            console.log("Mouseover Working",event.type,data);
+        },
+        mouseLeaveHandler(event){
+            console.log("Mouse Leaving",event.type);
+        },
+        dblclickHandler(event){
+            console.log("db click is working",event.type);
         }
     }
 });

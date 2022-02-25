@@ -6,30 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="">
     <title>Document</title>
-    <script src="https://unpkg.com/vue@3.0.2"></script>
+    <script src="https://unpkg.com/vue@3"></script>
+    <style>
+        .box{
+            background-color: aqua;
+            padding: 100px;
+            margin: 30px;
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>    
     <h1>Vue3 Learning</h1>
 
+<div id="app">
 
 
+    <div class="box" @mouseover="mouseoverHandler($event,'data')">Mouse Over</div>
+    <div class="box" @mouseleave="mouseLeaveHandler">Mouse Leave</div>
+    <div class="box" @dblclick="dblclickHandler">Double click</div>
 
 
-    <div id="app">
-        <div v-if="showBook">
-            <p>Book name - {{title}}</p>
-            <p>author name - {{author}}</p>
-            <p>author age - {{age}}</p>
-            
-        </div>
-        <button @click="showBook=!showBook">
-            <span v-if="showBook">hide</span>
-            <span v-if="!showBook">show</span>
-        </button>
-        
-    </div>
-
-
+</div>
 
 
 
