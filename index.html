@@ -7,28 +7,41 @@
     <link rel="stylesheet" href="">
     <title>Document</title>
     <script src="https://unpkg.com/vue@3"></script>
-    <style>
-        .box{
-            background-color: aqua;
-            padding: 100px;
-            margin: 30px;
-            display: inline-block;
-        }
-    </style>
+
 </head>
 <body>    
     <h1>Vue3 Learning</h1>
 
 <div id="app">
 
+    <div v-if="showBook">
+        <div v-for="book in books">
+            <p>Book name - {{book.title}}</p>
+            <p>author - {{book.author}}</p>
+            <p>author age - {{book.age}}</p><hr>
+            <!-- <a v-bind:href="{{link}}">Google</a> -->
+            
+        </div>
+        
+        
+    </div>
+    
+    <button @click="showBook=!showBook">
+        <span v-if="showBook">Hide</span>
+        <span v-if="!showBook">Show</span>
+    </button>
 
-    <div class="box" @mouseover="mouseoverHandler($event,'data')">Mouse Over</div>
-    <div class="box" @mouseleave="mouseLeaveHandler">Mouse Leave</div>
-    <div class="box" @dblclick="dblclickHandler">Double click</div>
+   
+</div>
+
+<br><br>
+<div id="link">
+
+
+    <a :href="link">Google</a>
 
 
 </div>
-
 
 
     <script src="app.js"></script>
