@@ -6,21 +6,27 @@ const app = Vue.createApp({
                 {
                     author:"Aung Aung",
                     title:"book 1",
-                    age: 33
+                    age: 33,
+                    img:"img/Mina.jpg",
+                    isFav:false
                 },
                 {
                     author:"Mg Mg",
                     title:"book 2",
-                    age:44
+                    age:44,
+                    img:"img/Mina2.jpg",
+                    isFav:false
                 },
                 {
                     author:"Kyaw Kyaw",
                     title:"book 3",
-                    age:55
+                    age:55,
+                    img:"img/momo.jpg",
+                    isFav:false
                 }
             ],
             showBook:true,
-            link:"http://www.google.com"
+            nightMode:false
         }
     },
     methods:{
@@ -41,7 +47,8 @@ app.mount('#app');
 const link = Vue.createApp({
     data() {
         return {
-            link:"http://www.google.com"
+            link:"http://www.google.com",
+           
         }
     }
 })

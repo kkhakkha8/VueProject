@@ -7,29 +7,54 @@
     <link rel="stylesheet" href="">
     <title>Document</title>
     <script src="https://unpkg.com/vue@3"></script>
-
+    <style>
+        li{
+            list-style: none;
+        }
+        .favorite{
+            background-color: aqua;
+        }
+        .container{
+            background-color: black;
+            color: white;
+        }
+    </style>
 </head>
 <body>    
     <h1>Vue3 Learning</h1>
 
-<div id="app">
-
-    <div v-if="showBook">
-        <div v-for="book in books">
-            <p>Book name - {{book.title}}</p>
-            <p>author - {{book.author}}</p>
-            <p>author age - {{book.age}}</p><hr>
-            <!-- <a v-bind:href="{{link}}">Google</a> -->
+<div id="app" >
+    <div :class="{container:nightMode}">
+        <div v-if="showBook">
+            <ul v-for="book in books">
+                <li :class="{favorite:book.isFav}">
+                <img :src="book.img" alt="" width="150" height="100">
+                <p>Book name - {{book.title}}</p>
+                <p>author - {{book.author}}</p>
+                <p>author age - {{book.age}}</p>
+                <button @click="book.isFav=!book.isFav">
+                    <span v-if="book.isFav">remove favorite</span>
+                    <span v-if="!book.isFav">add to favorite</span>
+                </button>
+                <hr>
+                <!-- <a v-bind:href="{{link}}">Google</a> -->
+                </li>
+            </ul>
+            
             
         </div>
         
-        
+        <button @click="showBook=!showBook">
+            <span v-if="showBook">Hide</span>
+            <span v-if="!showBook">Show</span>
+        </button>
+        <button @click="nightMode=!nightMode">
+            <span v-if="nightMode">Day Mode</span>
+            <span v-if="!nightMode">Night Mode</span>
+        </button>
     </div>
+
     
-    <button @click="showBook=!showBook">
-        <span v-if="showBook">Hide</span>
-        <span v-if="!showBook">Show</span>
-    </button>
 
    
 </div>
@@ -39,6 +64,7 @@
 
 
     <a :href="link">Google</a>
+    
 
 
 </div>
