@@ -1,20 +1,17 @@
 <template>
-  <h1>Hello {{title}}</h1>
+  <h1 ref="greet">Hi</h1>
+   <Model_com />
 </template>
 
 <script>
+import Model_com from "./components/Model_com.vue";
 export default {
-  data() {
-    return {
-      title:"You Don't know JS"
+    components: {
+        Model_com
     }
-  }
-  
 }
 </script>
 
 <style>
-h1{
-  color:red;
-}
+
 </style>
