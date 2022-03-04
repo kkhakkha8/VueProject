@@ -1,14 +1,15 @@
 <template>
   <div class="backdrop">
-      <div class="modal">
-          <p>Modal Content</p>
+      <div class="modal" :class="{success:theme==='success',danger:theme==='delete'}">
+          <h1>{{header}}</h1>
+          <p>{{content}}</p>
       </div>
   </div>
 </template>
 
 <script>
 export default {
-
+    props:['header','content','theme']
 }
 </script>
 
@@ -24,7 +25,15 @@ export default {
         background-color: white;
         width: 400px;
         margin : 100px auto;
-        padding :10px;
+        padding :30px;
         border-radius: 20px;
+    }
+    .success{
+        background-color: green;
+        color: white;
+    }
+    .danger{
+        background-color: crimson;
+        color:white;
     }
 </style>
