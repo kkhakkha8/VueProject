@@ -12,7 +12,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
     .backdrop{
         background-color: gray;
         width: 100%;
@@ -22,7 +22,7 @@ export default {
     }
     .modal{
         background-color: white;
-        width: 200px;
+        width: 400px;
         margin : 100px auto;
         padding :10px;
         border-radius: 20px;
