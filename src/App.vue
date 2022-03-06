@@ -10,22 +10,30 @@
             </template> -->
         </Model_com>
     </div>
+    <div v-if="showDelete" >
+        <Delete_mol @deleteHandler="showDelete=false"/>
+
+    </div>
     <button @click="showModal=true">show modal</button>
+    <button @click="showDelete=true">delete</button>
 </template>
 
 <script>
 import Model_com from "./components/Model_com.vue";
+import Delete_mol from "./components/Delete_mol.vue";
 export default {
     data() {
         return {
             
             theme: "success",
-            showModal:false
+            showModal:false,
+            showDelete:false
             
         }
     },
     components: {
-        Model_com
+        Model_com,
+        Delete_mol
     }
 }
 </script>
