@@ -1,15 +1,17 @@
 <template>
   <div class="backdrop" @click.self="closeModal"> 
       <div class="modal" :class="{success:theme==='success',danger:theme==='delete'}">
-          <h1>{{header}}</h1>
-          <p>{{content}}</p>
+          <slot>
+              default
+          </slot>
+          <slot name="links" />
       </div>
   </div>
 </template>
 
 <script>
 export default {
-    props:['header','content','theme'],
+    props:['theme'],
     methods:{
         closeModal(){
             this.$emit('close');
